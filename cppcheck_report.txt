@@ -1,0 +1,101 @@
+barebones/core_portme.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+barebones/cvt.c:62:8: style: Variable 'p1' is reassigned a value before the old one has been used. [redundantAssignment]
+    p1 = &buf[ndigits];
+       ^
+barebones/cvt.c:40:9: note: p1 is assigned
+    p1  = &buf[CVTBUFSIZE];
+        ^
+barebones/cvt.c:62:8: note: p1 is overwritten
+    p1 = &buf[ndigits];
+       ^
+barebones/ee_printf.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+core_list_join.c:292:12: warning: Possible null pointer dereference: finder [nullPointer]
+    while (finder->next != NULL)
+           ^
+core_list_join.c:267:26: note: Assignment 'list->next=NULL', assigned value is 0
+    list->next         = NULL;
+                         ^
+core_list_join.c:290:18: note: Assignment 'finder=list->next', assigned value is 0
+    finder = list->next;
+                 ^
+core_list_join.c:292:12: note: Null pointer dereference
+    while (finder->next != NULL)
+           ^
+core_list_join.c:583:9: warning: Possible null pointer dereference: tail [nullPointer]
+        tail->next = NULL;
+        ^
+core_list_join.c:511:16: note: Assignment 'tail=NULL', assigned value is 0
+        tail = NULL;
+               ^
+core_list_join.c:583:9: note: Null pointer dereference
+        tail->next = NULL;
+        ^
+core_list_join.c:221:13: style: Variable 'remover' is assigned a value that is never used. [unreadVariable]
+    remover = core_list_undo_remove(remover, list->next);
+            ^
+core_main.c:258:21: style: Condition 'divisor==0' is always false [knownConditionTrueFalse]
+        if (divisor == 0) /* some machines cast float to int as 0 since this
+                    ^
+core_main.c:247:28: note: Assuming that condition 'secs_passed<(ee_u32)1' is not redundant
+        while (secs_passed < (secs_ret)1)
+                           ^
+core_main.c:257:19: note: Assignment 'divisor=(ee_u32)secs_passed', assigned value is 0
+        divisor = (ee_u32)secs_passed;
+                  ^
+core_main.c:258:21: note: Condition 'divisor==0' is always false
+        if (divisor == 0) /* some machines cast float to int as 0 since this
+                    ^
+core_main.c:139:27: style: Variable 'results[0].iterations' is reassigned a value before the old one has been used. [redundantAssignment]
+    results[0].iterations = 1;
+                          ^
+core_main.c:137:27: note: results[0].iterations is assigned
+    results[0].iterations = get_seed_32(4);
+                          ^
+core_main.c:139:27: note: results[0].iterations is overwritten
+    results[0].iterations = 1;
+                          ^
+core_main.c:387:0: information: Skipping configuration 'HAS_FLOAT;MEM_LOCATION;MEM_LOCATION_UNSPEC' since the value of 'MEM_LOCATION' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+    ee_printf("Memory location  : %s\n", MEM_LOCATION);
+^
+core_matrix.c:240:35: style: Variable 'cur' is assigned a value that is never used. [unreadVariable]
+    MATRES tmp = 0, prev = 0, cur = 0;
+                                  ^
+core_state.c:201:26: style:inconclusive: Boolean expression 'c>='0'' is used in bitwise operation. Did you mean '&&'? [bitwiseOnBoolean]
+    retval = ((c >= '0') & (c <= '9')) ? 1 : 0;
+                         ^
+core_util.c:167:22: style: Variable 'x16' is assigned a value that is never used. [unreadVariable]
+    ee_u8 i = 0, x16 = 0, carry = 0;
+                     ^
+core_util.c:167:33: style: Variable 'carry' is assigned a value that is never used. [unreadVariable]
+    ee_u8 i = 0, x16 = 0, carry = 0;
+                                ^
+posix/core_portme.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 13 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+rtems/init.c:45:0: style: The function 'Init' is never used. [unusedFunction]
+
+^
+barebones/cvt.c:106:0: style: The function 'ecvt' is never used. [unusedFunction]
+
+^
+barebones/cvt.c:112:0: style: The function 'ecvtbuf' is never used. [unusedFunction]
+
+^
+barebones/cvt.c:118:0: style: The function 'fcvt' is never used. [unusedFunction]
+
+^
+barebones/cvt.c:124:0: style: The function 'fcvtbuf' is never used. [unusedFunction]
+
+^
+posix/core_portme.c:39:0: style: The function 'portable_free' is never used. [unusedFunction]
+
+^
+posix/core_portme.c:31:0: style: The function 'portable_malloc' is never used. [unusedFunction]
+
+^
+nofile:0:0: information: Cppcheck cannot find all the include files (use --check-config for details) [missingInclude]
+
